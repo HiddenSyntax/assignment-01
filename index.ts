@@ -1,13 +1,10 @@
-import { log } from "console";
-import { stat } from "fs";
-
-export function formatString(input: string, toUpper?: boolean): string {
+function formatString(input: string, toUpper?: boolean): string {
     if (toUpper === false) return input.toLowerCase();
 
     return input.toUpperCase();
 }
 
-export function filterByRating(
+function filterByRating(
     items: { title: string; rating: number }[]
 ): { title: string; rating: number }[] {
     return items.filter((item) => {
@@ -23,7 +20,7 @@ class Vehicle {
     }
 }
 
-export class Car extends Vehicle {
+class Car extends Vehicle {
     constructor(make: string, year: number, private model: string) {
         super(make, year);
     }
@@ -33,7 +30,7 @@ export class Car extends Vehicle {
     }
 }
 
-export function concatenateArrays<T>(...arrays: T[][]): T[] {
+function concatenateArrays<T>(...arrays: T[][]): T[] {
     let result: T[] = [];
     arrays.forEach((element) => {
         result = [...result, ...element];
@@ -42,19 +39,19 @@ export function concatenateArrays<T>(...arrays: T[][]): T[] {
     return result;
 }
 
-export function processValue(value: string | number): number {
+function processValue(value: string | number): number {
     if (typeof value === "string") {
         return value.length;
     }
     return value * 2;
 }
 
-export interface Product {
+interface Product {
     name: string;
     price: number;
 }
 
-export function getMostExpensiveProduct(products: Product[]): Product | null {
+function getMostExpensiveProduct(products: Product[]): Product | null {
     if (products.length === 0) return null;
 
     let max = products[0].price;
@@ -69,7 +66,7 @@ export function getMostExpensiveProduct(products: Product[]): Product | null {
     return products[maxidx];
 }
 
-export enum Day {
+enum Day {
     Monday,
     Tuesday,
     Wednesday,
@@ -79,12 +76,12 @@ export enum Day {
     Sunday
 }
 
-export function getDayType(day: Day): string {
+function getDayType(day: Day): string {
     if (day === Day.Saturday || day === Day.Sunday) return "Weekend";
     else return "Weekday";
 }
 
-export async function squareAsync(n: number): Promise<number> {
+async function squareAsync(n: number): Promise<number> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (n < 0) reject(new Error("Negative number not allowed"));
@@ -94,33 +91,3 @@ export async function squareAsync(n: number): Promise<number> {
         }, 1000);
     });
 }
-
-//squareAsync(4).then(console.log); // Output after 1s: 16
-//squareAsync(-3).catch(console.error); // Output: Error: Negative number not allowed
-let a: number;
-let b: null;
-
-//
-
-type SchoolStudent = {
-    name: string;
-    registration: number;
-    schoolName: string;
-};
-
-type CollegeStudent = {
-    name: string;
-    registration: number;
-    collegeName: string;
-};
-
-type Student = SchoolStudent & CollegeStudent;
-
-enum status {
-    pending = "PENDING_PROCESS",
-    processing = "PROCESSING",
-    completed = "COMPLETED"
-}
-
-console.log(status.pending);
-
