@@ -20,19 +20,19 @@ Example:
 **Intersection Type**
 An intersection type combines multiple types into one using the & operator. It is useful when we need all properties in a single variable.
 
-    type  SchoolStudent = {
+    type  SchoolInfo = {
 		name: string;
 		registration: number;
 		schoolName: string;
 	};
 
-	type  CollegeStudent = {
+	type  CollegeInfo = {
 		name: string;
 		registration: number;
 		collegeName: string;
 	};
 
-	type Student = SchoolStudent & CollegeStudent;
+	type Student = SchoolInfo & CollegeInfo;
 
 
  
