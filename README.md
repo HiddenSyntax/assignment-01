@@ -7,7 +7,15 @@ In web development, APIs are used extensively to exchange data between the front
 
 Example: 
 
-    let todayTemperature : number | null
+	type  Temperature = number | null;
+
+	function  farenhight2celcius(temperature: Temperature) {
+		if (temperature === null) return  new  Error("Data fetching is failed");
+		return ((temperature - 32) * 5) / 9;
+	}
+
+	let  temperature: Temperature = getData("weather.api");
+	let  celcius: Temperature = fahrenheitToCelsius(temperature);
 
 **Intersection Type**
 An intersection type combines multiple types into one using the & operator. It is useful when we need all properties in a single variable.
