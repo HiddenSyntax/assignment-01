@@ -33,3 +33,34 @@ An intersection type combines multiple types into one using the & operator. It i
 	};
 
 	type Student = SchoolStudent & CollegeStudent;
+
+
+ 
+
+
+
+## What is the use of `enums` in TypeScript? Provide an example of a numeric and string `enum`.
+
+**ENUM**
+
+An `enum` (short for "enumeration") in TypeScript is a way to define a set of named constants, making code more readable and maintainable. It allows to assign meaningful names to numeric or string values, improving type safety.
+
+Numeric Type `enum`:
+
+    enum Day {
+	      Monday,
+	      Tuesday,
+	      Wednesday,
+	      Thursday,
+	      Friday,
+	      Saturday,
+	      Sunday
+    }
+
+String Type `enum`:
+
+    enum Color {
+    	  Red = "#FF0000",
+    	  Green = "#00FF00",
+    	  Blue = "#0000FF"
+    }
